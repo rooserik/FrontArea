@@ -1,9 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 class App extends React.Component {
     render() {
         return (
-            <h1>Hello World!</h1>
+          <div>
+            <h1>Review your neighbourhood</h1>
+          </div>
         );
     }
 }
