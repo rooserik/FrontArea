@@ -8,19 +8,30 @@ class SingleArea extends React.Component {
 
   }
   componentDidMount() {
-    this.setState({
-      id: this.props.id
-      name: this.props.name
-      description: this.props.description
-    })
+    this.findArea();
+    }
+
+  findArea(){
+    let areaId = this.props.params.areaId;
+    let component = this;
+    jQuery.getJSON("https://arearate.herokuapp.com/areas/" + areaId + ".json",
+    function(data){
+      component.setState({
+        area: data.area
+      });
+    });
   }
 
   render() {
     return (
       <div>
-        <input name={this.props.name}/>
+        <h1>{this.state.area.name}</h1>
+        <p>{this.state.area.description}</p>
+        <p>Reviews:</p>
       </div>
 
     );
   }
 }
+
+export default SingleArea;
