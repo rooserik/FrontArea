@@ -28,6 +28,7 @@ class SingleArea extends React.Component {
         <h1>{this.state.area.name}</h1>
         <p>{this.state.area.description}</p>
         <p>Reviews:</p>
+        <ReviewList areaId={this.props.params.areaId} />
       </div>
 
     );
