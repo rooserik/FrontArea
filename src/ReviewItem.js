@@ -16,15 +16,15 @@ class ReviewItem extends React.Component {
     let story = this.refs.inputStory.value;
     let newReview = {
       id: null,
-      story: story
+      story: story,
       writer: writer,
       rating: rating,
     };
-  }
+
 
     jQuery.ajax(
       {
-        type: "POST".
+        type: "POST",
         url: "https://arearate.herokuapp.com/areas/" + areaId + "/reviews",
         data: JSON.stringify({
           review: newReview
@@ -32,7 +32,7 @@ class ReviewItem extends React.Component {
         contentType: "application/json",
         dataType: "json"
       }
-    );
+    )
 
     .done(function(data) {
       component.props.onChange();
@@ -40,6 +40,7 @@ class ReviewItem extends React.Component {
       component.refs.inputStory.value = "";
       component.refs.inputRating.value = "";
     })
+  }
   // componentDidMount() {
   //   this.setState({
   //     id: this.props.id,

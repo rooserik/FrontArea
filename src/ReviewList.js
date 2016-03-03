@@ -34,12 +34,10 @@ class ReviewList extends React.Component {
       <div>
         {this.state.reviews.map(function(review, i){
           return(
-            <ReviewItem
-              areaId={this.props.areaId}
-              id={review.id}
-              story={review.story}
-              writer={review.writer}
-              />
+            <div>
+            <h2>{review.story}</h2>
+            <p>- <i>{review.writer}</i></p>
+            </div>
           );
         }, this)}
       </div>
