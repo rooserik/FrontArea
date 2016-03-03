@@ -12,6 +12,7 @@ ReactDOM.render((
     <Route path="/" component={App}>
       <IndexRoute component={AreaList} />
       <Route path="/areas/:areaId" component={SingleArea}/>
+      <Route path="/areas" component={AreaList}/>
       <Route path="*" component={PageNotFound}/>
     </Route>
   </Router>

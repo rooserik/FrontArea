@@ -1,7 +1,7 @@
 import React from 'react';
 import jQuery from 'jquery';
 import { Router, Route, IndexRoute, Link, browserHistory } from 'react-router';
-import ReviewItem from './ReviewList';
+import ReviewItem from './ReviewItem';
 
 class ReviewList extends React.Component {
 
@@ -32,13 +32,13 @@ class ReviewList extends React.Component {
   render() {
     return(
       <div>
-        {this.state.reviews.map(function(task,i){
+        {this.state.reviews.map(function(review, i){
           return(
             <ReviewItem
               areaId={this.props.areaId}
               id={review.id}
-              story={story.id}
-              writer={writer.id}
+              story={review.story}
+              writer={review.writer}
               />
           );
         }, this)}

@@ -1,6 +1,7 @@
 import React from 'react';
 import jQuery from 'jquery';
 import area from './Model';
+import ReviewList from './ReviewList';
 
 class SingleArea extends React.Component {
   constructor() {
