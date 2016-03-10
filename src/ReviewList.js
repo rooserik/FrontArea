@@ -32,6 +32,7 @@ class ReviewList extends React.Component {
   render() {
     return(
       <div>
+        <ReviewItem areaId={this.props.areaId} onChange={this.refreshList.bind(this)}/>
         {this.state.reviews.map(function(review, i){
           return(
             <div>

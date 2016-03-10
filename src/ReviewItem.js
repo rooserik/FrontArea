@@ -53,8 +53,28 @@ class ReviewItem extends React.Component {
   render(){
     return(
       <div>
-        <h2>{this.props.story}</h2>
-        <p>{this.props.writer}</p>
+        <h2>Review the area: </h2>
+        <form role="form" onSubmit={this.createReview.bind(this)}>
+          <div className="row">
+            <label htmlFor="writer">Name:</label>
+            <input id="writer"ref="inputWriter" className="form-control" />
+          </div>
+          <div className="row">
+            <label htmlFor="story">Story:</label>
+            <textarea id="story" ref="inputStory" className="form-control" />
+          </div>
+          <div>
+            <label htmlFor="rating">Rating:</label>
+            <select id="rating" ref="inputRating" className="form-control">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+          <button type="submit" className="btn btn-default">Submit</button>
+        </form>
       </div>
     );
   }
